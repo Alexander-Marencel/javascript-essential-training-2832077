@@ -8,6 +8,10 @@
  * - Test your objects in the browser console by accessing the entire object and its specific properties.
  */
 const phone = {
+    status: "on",
+    change_status: function (on_off) {
+        this.status = on_off
+    },
     model: "Galaxy S-21 5G",
     model_name: "SM-G991U",
     apps: {
