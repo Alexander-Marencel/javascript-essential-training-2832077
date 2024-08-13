@@ -6,18 +6,17 @@
  * - Create several objects using the class.
  * - Test the objecs by calling their properties and using their methods in the console.
  */
-const Writing_tool = class {
-    constructor (
-        length,
-        material,
-        sharpness,
-    )
-    {
-    this.length = length
-    this.material = material
-    this.usability = {
-        sharpness: sharpness
-    }
-    
-    }
-}
+import Villan from "./Backpack.js"
+
+const Jeff = new Villan(
+    "Jeff",
+    "Male",
+    "Jeff's Play"
+)
+
+console.log("This is Jeff:", Jeff)
+Jeff.checkForLines()
+console.log("This is Jeff:", Jeff)
+Jeff.giveLines("I forgot my lines...")
+console.log("This is Jeff:", Jeff)
+Jeff.showLines()

@@ -37,4 +37,56 @@ class Backpack {
   }
 }
 
-export default Backpack;
+
+const Character = class {
+  constructor ( 
+      name,
+      gender,
+      play_name
+  )
+  {
+  this.name = name;
+  this.gender = gender;
+  this.play_name = play_name;
+
+  }
+  giveLines(script){
+      this.lines = script;
+  }
+
+  checkForLines(){
+      this.giveLines("")
+      if (this.lines.length > 0){
+          console.log("Yes, this character has lines");
+      }
+      else {
+          console.log("No, this character doesn't have lines");
+      }
+  }
+
+  showLines(){
+    console.log("These are " + this.name + "'s lines: "+this.lines)
+  }
+}
+
+const Villan = class extends Character{
+  constructor(
+    name,
+    gender,
+    play,
+    nemesis
+  ){
+    super(name, gender, play);
+    this.nemesis = nemesis;
+  }
+
+  showLines(){
+    super.showLines();
+      console.log("Said in a menacing tone")
+    }
+  }
+
+
+
+
+export default Villan; Character; Backpack;
