@@ -83,6 +83,8 @@ const Villan = class extends Character{
   showLines(){
     super.showLines();
       console.log("Said in a menacing tone")
+      let key = this.play_name
+      console.log(key)
     }
   }
 
