@@ -20,3 +20,5 @@ console.log("This is Jeff:", Jeff)
 Jeff.giveLines("I forgot my lines...")
 console.log("This is Jeff:", Jeff)
 Jeff.showLines()
+
+document.body.innerHTML = `This is Jeff. /n Tell them your lines Jeff /n ${Jeff.lines}`
