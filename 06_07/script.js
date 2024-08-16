@@ -3,8 +3,8 @@
  * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#Relational_operators
  */
 
-let a = 5;
-let b = 4;
+let a = "Five";
+let b = "five";
 
 console.log(`let a: ${a} (${typeof a})`);
 console.log(`let b: ${b} (${typeof b})`);
