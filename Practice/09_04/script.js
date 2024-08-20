@@ -37,32 +37,35 @@ const dim = function(event){
 
 }
 
+const changeHueSat = function(event, element){
+    this.element = element
+    if ((event.key === "-" || event.key === "_") && light > 0){
+        light--;
+        this.element.style.backgroundColor = "hsl("+hue+","+sat+"% ,"+light+"%)";
+        console.log("Light value:", light)
+    }
+
+    if ((event.key === "+" || event.key === "=") && light < 100){
+        light++;
+        this.element.style.backgroundColor = "hsl("+hue+","+sat+"% ,"+light+"%)";
+        console.log("Light value:", light)
+    }
+
+    if (event.key === "h" || event.key === "H"){
+        if (hue == 356){hue=0} 
+        hue++;
+        this.element.style.backgroundColor = "hsl("+hue+","+sat+"% ,"+light+"%)";
+        console.log("Hue value:", hue)
+    }
+
+}
+
 const changeBackground = function(){
     let bodyContainer = document.querySelector("body");
     hue = 0;
     sat = 100;
     light = 100;
-    bodyContainer.addEventListener("keypress", (event) => {
-        if ((event.key === "-" || event.key === "_") && light > 0){
-            light--;
-            bodyContainer.style.backgroundColor = "hsl("+hue+","+sat+"% ,"+light+"%)";
-            console.log("Light value:", light)
-        }
-
-        if ((event.key === "+" || event.key === "=") && light < 100){
-            light++;
-            bodyContainer.style.backgroundColor = "hsl("+hue+","+sat+"% ,"+light+"%)";
-            console.log("Light value:", light)
-        }
-
-        if (event.key === "h" || event.key === "H"){
-            if (hue == 356){hue=0} 
-            hue++;
-            bodyContainer.style.backgroundColor = "hsl("+hue+","+sat+"% ,"+light+"%)";
-            console.log("Hue value:", hue)
-        }
-    
-    })
+    bodyContainer.addEventListener("keypress", (event) => changeHueSat(event, bodyContainer) )
 
 };
 
